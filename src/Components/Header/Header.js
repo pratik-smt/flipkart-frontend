@@ -3,6 +3,7 @@ import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 // import Logo from "../../logo.svg";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import AddShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/light.css";
@@ -59,32 +60,32 @@ const Header = () => {
           >
             Plus
           </span>
-          {/* <span>
+          <span>
             <img
               width="10"
               className="logo"
               src="//img1a.flixcart.com/www/linchpin/fk-cp-zion/img/plus_b13a8b.png"
               alt=""
             />
-          </span> */}
+          </span>
         </div>
       </div>
-      <div className="second">
-        <input type="text" placeholder="Search for products,brands and more" />
+      <div className="second my-2">
+        <input type="text" style={{ padding: "4px 15px" }} placeholder="Search for products,brands and more" />
         <SearchIcon />
       </div>
       <div className="third">
-        <button onClick={handleOpen}>
-          <Tippy
-            content={<LoginT></LoginT>}
-            interactive={true}
-            offset={[5, 20]}
-            theme="light"
-            animation="scale"
-          >
+        <Tippy
+          content={<LoginT></LoginT>}
+          interactive={true}
+          offset={[5, 20]}
+          theme="light"
+          animation="scale"
+        >
+          <button onClick={handleOpen} className=" bg-white" style={{ padding: "4px" }}>
             <span>Login</span>
-          </Tippy>
-        </button>
+          </button>
+        </Tippy>
 
       </div>
       <div className="fourth">
@@ -101,6 +102,7 @@ const Header = () => {
       </div>
       <div onClick={() => history.push("/cart")} className="fifth">
         {/* <img src={Logo} alt="" /> */}
+        <AddShoppingCartIcon style={{ color: "white", height: "20px", marginRight: "5px" }} />
         <p style={{ color: "white", fontWeight: "600" }}>Cart</p>
       </div>
       <div className="modal"></div>
